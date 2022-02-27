@@ -1,0 +1,32 @@
+﻿@using Family.DAL.Entities
+@model List<Request>
+@{
+    ViewBag.Title = "MyRequest";
+    Layout = "~/Views/Shared/LayoutPage.cshtml";
+}
+
+<h2>MyRequest</h2>
+
+<table>
+    <tr>
+
+
+    </tr>
+    @foreach (Request item in Model)
+    {<tr>
+    
+    
+    </tr>
+        <td>@item.Sender.FirstName @item.Sender.LastName</td>
+        <td>@item.RequestDate</td>
+        <td>@item.Relation</td>
+        <td>
+            <a href="/Relation/Response?senderId=@item.SenderId&response=1" class="btn btn success">Kabul Et</a>
+            <a href="/Relation/Response?senderId=@item.SenderId&response=2" class="btn btn success">Reddet</a>
+
+        </td>
+
+    }
+
+
+</table>
